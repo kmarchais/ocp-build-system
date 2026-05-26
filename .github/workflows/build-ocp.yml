@@ -7,10 +7,10 @@ on: workflow_dispatch
 #       - v7.9
 
 env:
-  OCP: 7.9.3.1
-  WHEEL: 7.9.3.1
-  VTK: 9.5.2
-  VTK_MAJOR: 9.5
+  OCP: 7.9.3.1.1
+  WHEEL: 7.9.3.1.1
+  VTK: 9.6.2
+  VTK_MAJOR: 9.6
   OCCT: 7.9.3
   PYBIND11: 2.13
   PYWRAP: "false"
@@ -37,9 +37,6 @@ jobs:
         os: ["ubuntu-22.04", "ubuntu-22.04-arm"]
         python-version: ["3.10", "3.11", "3.12", "3.13", "3.14"]
         use-vtk: ["vtk", "novtk"]
-        exclude:
-          - python-version: "3.14"
-            use-vtk: "vtk"
         include:
           - os: "ubuntu-22.04"
             runner: ubuntu-latest
@@ -71,9 +68,6 @@ jobs:
         os: ["macos-15-intel", "macos-15", "windows-2022"]
         python-version: ["3.10", "3.11", "3.12", "3.13", "3.14"]
         use-vtk: ["vtk", "novtk"]
-        exclude:
-          - python-version: "3.14"
-            use-vtk: "vtk"
         include:
           - os: "macos-15"
             vtk-libs: ".dylibs/libvtk*.dylib"
@@ -222,9 +216,6 @@ jobs:
         os: ["ubuntu-22.04", "ubuntu-22.04-arm"]
         python-version: ["3.10", "3.11", "3.12", "3.13", "3.14"]
         use-vtk: ["vtk", "novtk"]
-        exclude:
-          - python-version: "3.14"
-            use-vtk: "vtk"
         include:
           - os: "ubuntu-22.04"
             runner: ubuntu-latest
@@ -259,9 +250,6 @@ jobs:
         os: ["macos-15-intel", "macos-15", "windows-2022"]
         python-version: ["3.10", "3.11", "3.12", "3.13", "3.14"]
         use-vtk: ["vtk", "novtk"]
-        exclude:
-          - python-version: "3.14"
-            use-vtk: "vtk"
         include:
           - os: "macos-15"
             delocate: delocate
@@ -321,9 +309,6 @@ jobs:
           ]
         python-version: ["3.10", "3.11", "3.12", "3.13", "3.14"]
         use-vtk: ["vtk", "novtk"]
-        exclude:
-          - python-version: "3.14"
-            use-vtk: "vtk"
         include:
           - os: "macos-15-intel"
             runner: macos-15-intel
